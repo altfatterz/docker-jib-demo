@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <jib-maven-plugin.version>1.5.1</jib-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -41,7 +42,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>${jib-maven-plugin.version}</version>
                 <configuration>
                     <from>
                         <image>openjdk:8-jre-alpine</image>
@@ -50,7 +51,7 @@
                         <tags>${project.version}</tags>
                     </to>
                     <container>
-                        <useCurrentTimestamp>true</useCurrentTimestamp>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
                     </container>
                 </configuration>
             </plugin>
